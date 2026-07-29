@@ -25,7 +25,7 @@ logs/
 embeddings/
 index/
 indexes/
-models/
+/models/
 backups/
 backup*/
 backup_*/
