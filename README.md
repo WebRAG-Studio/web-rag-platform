@@ -2,7 +2,7 @@
 
 **Turn websites into intelligent, source-grounded assistants.**
 
-SiteMind is a self-hosted RAG platform from **SiteMind Labs**. Add a public website, crawl its pages and documents into an isolated local index, and ask questions with citations built from verified source metadata.
+SiteMind is a self-hosted RAG platform developed by **WebRAG Studio**. Add a public website, crawl its pages and documents into an isolated local index, and ask questions with citations built from verified source metadata.
 
 Repository description: **Turn public websites and documents into multilingual, citation-grounded AI assistants with crawling, OCR, semantic search, voice support and live indexing progress.**
 
@@ -142,7 +142,7 @@ See [Security](SECURITY.md) and [Deployment](docs/deployment.md) before exposing
 
 ## Acknowledgements
 
-SiteMind builds on FastAPI, Beautiful Soup, NumPy, pypdf, and the wider open-source Python ecosystem. Contributors are acknowledged through the repository history once a license and contribution policy are finalized.
+SiteMind builds on FastAPI, Beautiful Soup, NumPy, pypdf, and the wider open-source Python ecosystem. Contributors are acknowledged through the repository history and contribution guidelines.
 
 ## Responsible crawling
 
@@ -154,4 +154,5 @@ SiteMind is licensed under the [MIT License](LICENSE).
 ## Independent-project disclaimer
 
 SiteMind is an independent open-source/portfolio project. It is not affiliated with, endorsed by, or operated by any website or institution used in examples. Users are responsible for having permission to crawl, store, index and reuse website content and for complying with applicable terms, robots policies, copyright rules and laws.
+
 
