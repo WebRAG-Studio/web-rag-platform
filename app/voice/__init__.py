@@ -1,0 +1,1 @@
+"""Optional voice capability reporting."""

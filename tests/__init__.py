@@ -1,0 +1,1 @@
+"""SiteMind synthetic tests."""

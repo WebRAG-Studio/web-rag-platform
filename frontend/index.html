@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SiteMind | Website Assistant Builder</title>
+  <meta name="description" content="Turn public websites and documents into multilingual, citation-grounded AI assistants.">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="SiteMind home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span><strong>SiteMind</strong><small>by SiteMind Labs</small></span>
+    </a>
+    <nav class="top-links" aria-label="Project links">
+      <a href="/docs">Interactive API</a>
+      <a href="/redoc">API reference</a>
+      <span class="status"><span aria-hidden="true"></span> Local workspace</span>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <aside class="sidebar" aria-label="Website assistants">
+      <button id="new-site" class="primary">Create Website Assistant</button>
+      <p class="nav-label">Existing assistants</p>
+      <nav id="site-list" aria-live="polite"></nav>
+      <p class="privacy-note">Every website uses an isolated workspace, document store, conversation, and index.</p>
+    </aside>
+
+    <section id="workspace" class="workspace" tabindex="-1">
+      <div class="landing">
+        <span class="eyebrow">SITEMIND LABS</span>
+        <h1>Turn websites into intelligent, source-grounded assistants.</h1>
+        <p class="lede">Turn public websites and documents into multilingual, citation-grounded AI assistants.</p>
+        <p>Create an assistant by entering a website name and public website URL.</p>
+        <button class="primary" data-open-setup>Create Website Assistant</button>
+        <div class="landing-band">
+          <strong>Independent project</strong>
+          <p>SiteMind is not affiliated with websites used in examples. Only crawl and index content you are permitted to use.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="setup-dialog" aria-labelledby="setup-title">
+    <form id="setup-form">
+      <div class="dialog-head">
+        <div><span class="eyebrow">NEW ASSISTANT</span><h2 id="setup-title">Configure a website source</h2></div>
+        <button type="button" class="icon" data-close aria-label="Close setup">x</button>
+      </div>
+      <div class="form-grid">
+        <label>Website Name<input name="site_name" required maxlength="100" placeholder="Example University"></label>
+        <label>Website URL<input name="website_url" required type="url" placeholder="https://example.edu"></label>
+        <label>Assistant Name<input name="assistant_name" required maxlength="100" value="SiteMind Assistant"></label>
+        <label>Crawl Mode<select name="crawl_mode"><option value="standard">Standard</option><option value="full">Full</option></select></label>
+        <label>Maximum Pages<input name="max_pages" type="number" min="1" max="100000" value="100"></label>
+        <label>Crawl Depth<input name="max_depth" type="number" min="0" max="20" value="3"></label>
+        <label>Languages<input name="languages" value="en" placeholder="en, ur, ar, fr"></label>
+        <label>Optional Logo URL<input name="logo_url" type="url" placeholder="https://example.edu/logo.png"></label>
+        <label>Accent Color<input name="accent_color" type="color" value="#0f766e"></label>
+      </div>
+      <fieldset>
+        <legend>Content and extraction</legend>
+        <label class="check"><input name="include_html" type="checkbox" checked> Include Webpages</label>
+        <label class="check"><input name="include_pdf" type="checkbox" checked> Include PDFs</label>
+        <label class="check"><input name="enable_ocr" type="checkbox" checked> Enable OCR</label>
+      </fieldset>
+      <p id="form-error" class="error" role="alert" aria-live="assertive"></p>
+      <div class="actions"><button type="button" class="secondary" data-close>Cancel</button><button class="primary" type="submit">Create Website Assistant</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="delete-dialog" aria-labelledby="delete-title">
+    <form id="delete-form">
+      <div class="dialog-head"><div><span class="eyebrow danger-text">DANGER ZONE</span><h2 id="delete-title">Delete local site data</h2></div><button type="button" class="icon" data-close-delete aria-label="Close delete confirmation">x</button></div>
+      <p>This permanently removes this site's local pages, documents, index, and crawl state. Type the site ID to confirm:</p>
+      <code id="delete-site-id"></code>
+      <label>Confirmation<input name="confirm_site_id" required autocomplete="off"></label>
+      <p id="delete-error" class="error" role="alert"></p>
+      <div class="actions"><button type="button" class="secondary" data-close-delete>Cancel</button><button class="danger" type="submit">Delete Site Data</button></div>
+    </form>
+  </dialog>
+
+  <div id="announcer" class="sr-only" aria-live="polite"></div>
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
